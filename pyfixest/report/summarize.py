@@ -27,28 +27,31 @@ def etable(
     signif_code: Optional[list] = None,
     coef_fmt: str = "b \n (se)",
     custom_stats: Optional[dict] = None,
+    custom_model_stats: Optional[dict] = None,
     keep: Optional[Union[list, str]] = None,
     drop: Optional[Union[list, str]] = None,
     exact_match: Optional[bool] = False,
     labels: Optional[dict] = None,
+    cat_template: Optional[str] = None,
     show_fe: Optional[bool] = True,
     show_se_type: Optional[bool] = True,
     felabels: Optional[dict] = None,
     notes: str = "",
     model_heads: Optional[list] = None,
     head_order: Optional[str] = "dh",
-    custom_model_stats: Optional[dict] = None,
     filename: Optional[str] = None,
     print_tex: Optional[bool] = False,
     **kwargs,
 ) -> Union[pd.DataFrame, str, None]:
     r"""
-    Create an esttab-like table from a list of models.
+    Generate a table summarizing the results of multiple regression models.
+    It supports various output formats including html (via great tables),  markdown, and LaTeX.
 
     Parameters
     ----------
     models : A supported model object (Feols, Fepois, Feiv, FixestMulti) or a list of
             Feols, Fepois & Feiv models.
+        The models to be summarized in the table.
     type : str, optional
         Type of output. Either "df" for pandas DataFrame, "md" for markdown,
         "gt" for great_tables, or "tex" for LaTeX table. Default is "gt".
@@ -60,7 +63,15 @@ def etable(
         p-value (p). Default is `"b \n (se)"`.
         Spaces ` `, parentheses `()`, brackets `[]`, newlines `\n` are supported.
     custom_stats: dict, optional
-        A dictionary of custom statistics. "b", "se", "t", or "p" are reserved.
+        A dictionary of custom statistics that can be used in the coef_fmt string to be displayed
+        in the coefficuent cells analogously to "b", "se" etc. The keys are the names of the custom
+        statistics, and the values are lists of lists, where each inner list contains the custom
+        statistic values for all coefficients each model.
+        Note that "b", "se", "t", or "p" are reserved and cannot be used as keys.
+    custom_model_stats: dict, optional
+        A dictionary of custom model statistics or model information displayed in a new line in the
+        bottom panel of the table. The keys are the names of the statistics (i.e. entry in the first column)
+        and the values are a lists of the same length as the number of models. Default is None.
     keep: str or list of str, optional
         The pattern for retaining coefficient names. You can pass a string (one
         pattern) or a list (multiple patterns). Default is keeping all coefficients.
@@ -83,6 +94,11 @@ def etable(
         names and the values the new names. Note that interaction terms will also be
         relabeled using the labels of the individual variables.
         The command is applied after the `keep` and `drop` commands.
+    cat_template: str, optional
+        Template to relabel categorical variables. None by default, which applies no relabeling.
+        Other options include combinations of "{variable}" and "{value}", e.g. "{variable}::{value}"
+        to mimic fixest encoding. But "{variable}--{value}" or "{variable}{value}" or just "{value}"
+        are also possible.
     show_fe: bool, optional
         Whether to show the rows with fixed effects markers. Default is True.
     show_se_type: bool, optional
@@ -154,8 +170,12 @@ def etable(
             "signif_code must be in increasing order"
         )
 
+    cat_template = "" if cat_template is None else cat_template
+
     models = _post_processing_input_checks(models)
 
+    if labels is None:
+        labels = {}
     if custom_stats is None:
         custom_stats = dict()
     if keep is None:
@@ -215,16 +235,19 @@ def etable(
     r2_list = []
     r2_within_list: list[float] = []  # noqa: F841
 
-    # Define code for R2 & interaction symbol depending on output type
+    # Define code for R2, interaction & line break depending on output type
     if type in ["gt", "html"]:
         interactionSymbol = " &#215; "
         R2code = "R<sup>2</sup>"
+        lbcode = "<br>"
     elif type == "tex":
         interactionSymbol = " $\\times$ "
         R2code = "$R^2$"
+        lbcode = r"\\"
     else:
         interactionSymbol = " x "
         R2code = "R2"
+        lbcode = "\n"
 
     for model in models:
         dep_var_list.append(model._depvar)
@@ -345,12 +368,7 @@ def etable(
                     custom_stats[element][i]
                 ).apply(_number_formatter, **kwargs)
             elif element == "\n":  # Replace output specific code for newline
-                if type in ["html", "gt"]:
-                    model_tidy_df[coef_fmt_title] += "<br>"
-                elif type == "tex":
-                    model_tidy_df[coef_fmt_title] += r"\\"
-                elif type in ["md", "df"]:
-                    model_tidy_df[coef_fmt_title] += "\n"
+                model_tidy_df[coef_fmt_title] += lbcode
             else:
                 model_tidy_df[coef_fmt_title] += element
         model_tidy_df[coef_fmt_title] = pd.Categorical(model_tidy_df[coef_fmt_title])
@@ -392,14 +410,14 @@ def etable(
         res = pd.concat([res, pd.DataFrame([intercept_row])])
 
     # Relabel variables
-    if labels is not None:
+    if (labels != {}) or (cat_template != ""):
         # Relabel dependent variables
         dep_var_list = [labels.get(k, k) for k in dep_var_list]
 
         # Relabel explanatory variables
         res_index = res.index.to_series()
         res_index = res_index.apply(
-            lambda x: _relabel_expvar(x, labels or {}, interactionSymbol)
+            lambda x: _relabel_expvar(x, labels or {}, interactionSymbol, cat_template)
         )
         res.set_index(res_index, inplace=True)
 
@@ -567,7 +585,9 @@ def summary(models: ModelInputType, digits: int = 3) -> None:
 
 
 def _post_processing_input_checks(
-    models: ModelInputType, check_duplicate_model_names: bool = False
+    models: ModelInputType,
+    check_duplicate_model_names: bool = False,
+    rename_models: Optional[dict[str, str]] = None,
 ) -> list[Union[Feols, Fepois, Feiv]]:
     """
     Perform input checks for post-processing models.
@@ -581,6 +601,9 @@ def _post_processing_input_checks(
                 Whether to check for duplicate model names. Default is False.
                 Mostly used to avoid overlapping models in plots created via
                 pf.coefplot() and pf.iplot().
+        rename_models : dict, optional
+                A dictionary to rename the models. The keys are the original model names
+                and the values are the new model names.
 
     Returns
     -------
@@ -609,10 +632,12 @@ def _post_processing_input_checks(
     else:
         raise TypeError("Invalid type for models argument.")
 
+    if check_duplicate_model_names or rename_models is not None:
+        all_model_names = [model._model_name for model in models_list]
+
     if check_duplicate_model_names:
         # create model_name_plot attribute to differentiate between models with the
         # same model_name / model formula
-        all_model_names = [model._model_name for model in models_list]
         for model in models_list:
             model._model_name_plot = model._model_name
 
@@ -627,6 +652,16 @@ def _post_processing_input_checks(
                 model._model_name_plot = f"Model {i}: {model._model_name}"
                 warnings.warn(
                     f"The _model_name attribute {model._model_name}' is duplicated for models in the `models` you provided. To avoid overlapping model names / plots, the _model_name_plot attribute has been changed to '{model._model_name_plot}'."
+                )
+
+        if rename_models is not None:
+            model_name_diff = set(rename_models.keys()) - set(all_model_names)
+            if model_name_diff:
+                warnings.warn(
+                    f"""
+                    The following model names specified in rename_models are not found in the models:
+                    {model_name_diff}
+                    """
                 )
 
     return models_list
@@ -991,8 +1026,6 @@ def make_table(
             with open(file_name, "w") as f:
                 f.write(latex_res)  # Write the latex code to a file
 
-        # Only when type is 'tex' return the latex code as
-        # otherwise a GT object will be returned
         if type == "tex":
             return latex_res
 
