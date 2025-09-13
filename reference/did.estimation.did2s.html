@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -58,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-85d6ed6ef93f7b75ae44cb4d7fc8909c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-19c6f25d9c793ca7e0d0ad6a6391bd12.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -115,6 +116,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -171,6 +176,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">On Small Sample Corrections</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../quantile-regression.html">
+ <span class="dropdown-text">Quantile Regression</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../compare-fixest-pyfixest.html">
  <span class="dropdown-text">Compare fixest &amp; PyFixest</span></a>
   </li>  
@@ -183,8 +192,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">PyFixest on the GPU</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../resources.html">
+ <span class="dropdown-text">Other Resources around PyFixest</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../replicating-the-effect.html">
  <span class="dropdown-text">Replicating ‘The Effect’ with PyFixest</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../mixtape.html">
+ <span class="dropdown-text">Replicating ‘The Mixtape’ with PyFixest</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../brave_true.html">
+ <span class="dropdown-text">Replicating ‘Causal Inference for the Brave and True’ with PyFixest</span></a>
   </li>  
     </ul>
   </li>
@@ -216,6 +237,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -249,6 +274,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../reference/estimation.estimation.feglm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">estimation.estimation.feglm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/estimation.estimation.quantreg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">estimation.estimation.quantreg</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -452,7 +483,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>did.estimation.did2s(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>did.estimation.did2s(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    data,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    yname,</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    first_stage,</span>
@@ -460,7 +491,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    treatment,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    cluster,</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    weights<span class="op">=</span><span class="va">None</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Estimate a Difference-in-Differences model using Gardner’s two-step DID2S estimator.</p>
 <section id="parameters" class="level2 doc-section doc-section-parameters">
 <h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
@@ -545,17 +576,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="examples" class="level2 doc-section doc-section-examples">
 <h2 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h2>
-<div id="b894435e" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div id="8153a707" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyfixest <span class="im">as</span> pf</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/py-econometrics/pyfixest/master/pyfixest/did/data/df_het.csv"</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df_het <span class="op">=</span> pd.read_csv(url)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df_het.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df_het.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 
-            <div id="6YxcZ4"></div>
+            <div id="qypSur"></div>
             <script type="text/javascript" data-lets-plot-script="library">
                 if(!window.letsPlotCallQueue) {
                     window.letsPlotCallQueue = [];
@@ -566,7 +597,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                 (function() {
                     var script = document.createElement("script");
                     script.type = "text/javascript";
-                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.2/js-package/distr/lets-plot.min.js";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.6.2/js-package/distr/lets-plot.min.js";
                     script.onload = function() {
                         window.letsPlotCall = function(f) {f();};
                         window.letsPlotCallQueue.forEach(function(f) {f();});
@@ -579,9 +610,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                         var div = document.createElement("div");
                         div.style.color = 'darkred';
                         div.textContent = 'Error loading Lets-Plot JS';
-                        document.getElementById("6YxcZ4").appendChild(div);
+                        document.getElementById("qypSur").appendChild(div);
                     };
-                    var e = document.getElementById("6YxcZ4");
+                    var e = document.getElementById("qypSur");
                     e.appendChild(script);
                 })()
             </script>
@@ -589,7 +620,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-display">
 
-            <div id="PBFp3S"></div>
+            <div id="2yk1nB"></div>
             <script type="text/javascript" data-lets-plot-script="library">
                 if(!window.letsPlotCallQueue) {
                     window.letsPlotCallQueue = [];
@@ -600,7 +631,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                 (function() {
                     var script = document.createElement("script");
                     script.type = "text/javascript";
-                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.5.2/js-package/distr/lets-plot.min.js";
+                    script.src = "https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v4.6.2/js-package/distr/lets-plot.min.js";
                     script.onload = function() {
                         window.letsPlotCall = function(f) {f();};
                         window.letsPlotCallQueue.forEach(function(f) {f();});
@@ -613,9 +644,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                         var div = document.createElement("div");
                         div.style.color = 'darkred';
                         div.textContent = 'Error loading Lets-Plot JS';
-                        document.getElementById("PBFp3S").appendChild(div);
+                        document.getElementById("2yk1nB").appendChild(div);
                     };
-                    var e = document.getElementById("PBFp3S");
+                    var e = document.getElementById("2yk1nB");
                     e.appendChild(script);
                 })()
             </script>
@@ -625,7 +656,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -647,7 +678,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>1</td>
 <td>33</td>
 <td>Group 2</td>
@@ -664,7 +695,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>7.022709</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>1</td>
 <td>33</td>
 <td>Group 2</td>
@@ -681,7 +712,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>7.778628</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>1</td>
 <td>33</td>
 <td>Group 2</td>
@@ -698,7 +729,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>8.436377</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>1</td>
 <td>33</td>
 <td>Group 2</td>
@@ -715,7 +746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>7.191207</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>1</td>
 <td>33</td>
 <td>Group 2</td>
@@ -738,8 +769,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>In a first step, we estimate a classical event study model:</p>
-<div id="36c753ae" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estimate the model</span></span>
+<div id="24d5ccfe" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estimate the model</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> pf.did2s(</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    df_het,</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    yname<span class="op">=</span><span class="st">"dep_var"</span>,</span>
@@ -749,12 +780,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    cluster<span class="op">=</span><span class="st">"state"</span>,</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>fit.tidy().head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>fit.tidy().head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -777,7 +808,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-inf]</td>
+<th data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-inf]</th>
 <td>-3.551930e-08</td>
 <td>5.844125e-09</td>
 <td>-6.077778</td>
@@ -786,7 +817,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>-2.406472e-08</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-20.0]</td>
+<th data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-20.0]</th>
 <td>-5.822583e-02</td>
 <td>3.580900e-02</td>
 <td>-1.626011</td>
@@ -795,7 +826,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>1.196034e-02</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-19.0]</td>
+<th data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-19.0]</th>
 <td>-6.032212e-03</td>
 <td>3.034072e-02</td>
 <td>-0.198816</td>
@@ -804,7 +835,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>5.343606e-02</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-18.0]</td>
+<th data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-18.0]</th>
 <td>-6.152375e-03</td>
 <td>3.509400e-02</td>
 <td>-0.175311</td>
@@ -813,7 +844,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>6.263239e-02</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-17.0]</td>
+<th data-quarto-table-cell-role="th">C(rel_year, contr.treatment(base=-1.0))[T.-17.0]</th>
 <td>-1.253327e-02</td>
 <td>2.483369e-02</td>
 <td>-0.504688</td>
@@ -828,33 +859,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We can also inspect the model visually:</p>
-<div id="7bd7dc53" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fit.iplot(figsize<span class="op">=</span> [<span class="dv">1200</span>, <span class="dv">400</span>], coord_flip<span class="op">=</span><span class="va">False</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1a842aeb" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fit.iplot(figsize<span class="op">=</span> [<span class="dv">1200</span>, <span class="dv">400</span>], coord_flip<span class="op">=</span><span class="va">False</span>).show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-   <div id="1efuZg"></div>
+   <div id="FxhHKI"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
    
    (function() {
    // ----------
    
-   var containerDiv = document.getElementById("1efuZg");
-   var observer = new ResizeObserver(function(entries) {
-       for (let entry of entries) {
-           var width = containerDiv.clientWidth
-           if (entry.contentBoxSize && width > 0) {
-           
-               // Render plot
-               if (observer) {
-                   observer.disconnect();
-                   observer = null;
-               }
-
-               var plotSpec={
+   const forceImmediateRender = false;
+   const responsive = false;
+   
+   let sizing = {
+       width_mode: "MIN",
+       height_mode: "SCALED",
+       width: null, 
+       height: null 
+   };
+   
+   const preferredWidth = document.body.dataset.letsPlotPreferredWidth;
+   if (preferredWidth !== undefined) {
+       sizing = {
+           width_mode: 'FIXED',
+           height_mode: 'SCALED',
+           width: parseFloat(preferredWidth)
+       };
+   }
+   
+   const containerDiv = document.getElementById("FxhHKI");
+   let fig = null;
+   
+   function renderPlot() {
+       if (fig === null) {
+           const plotSpec = {
 "data":{
 "Coefficient":["C(rel_year, contr.treatment(base=-1.0))[T.-inf]","C(rel_year, contr.treatment(base=-1.0))[T.-20.0]","C(rel_year, contr.treatment(base=-1.0))[T.-19.0]","C(rel_year, contr.treatment(base=-1.0))[T.-18.0]","C(rel_year, contr.treatment(base=-1.0))[T.-17.0]","C(rel_year, contr.treatment(base=-1.0))[T.-16.0]","C(rel_year, contr.treatment(base=-1.0))[T.-15.0]","C(rel_year, contr.treatment(base=-1.0))[T.-14.0]","C(rel_year, contr.treatment(base=-1.0))[T.-13.0]","C(rel_year, contr.treatment(base=-1.0))[T.-12.0]","C(rel_year, contr.treatment(base=-1.0))[T.-11.0]","C(rel_year, contr.treatment(base=-1.0))[T.-10.0]","C(rel_year, contr.treatment(base=-1.0))[T.-9.0]","C(rel_year, contr.treatment(base=-1.0))[T.-8.0]","C(rel_year, contr.treatment(base=-1.0))[T.-7.0]","C(rel_year, contr.treatment(base=-1.0))[T.-6.0]","C(rel_year, contr.treatment(base=-1.0))[T.-5.0]","C(rel_year, contr.treatment(base=-1.0))[T.-4.0]","C(rel_year, contr.treatment(base=-1.0))[T.-3.0]","C(rel_year, contr.treatment(base=-1.0))[T.-2.0]","C(rel_year, contr.treatment(base=-1.0))[T.0.0]","C(rel_year, contr.treatment(base=-1.0))[T.1.0]","C(rel_year, contr.treatment(base=-1.0))[T.2.0]","C(rel_year, contr.treatment(base=-1.0))[T.3.0]","C(rel_year, contr.treatment(base=-1.0))[T.4.0]","C(rel_year, contr.treatment(base=-1.0))[T.5.0]","C(rel_year, contr.treatment(base=-1.0))[T.6.0]","C(rel_year, contr.treatment(base=-1.0))[T.7.0]","C(rel_year, contr.treatment(base=-1.0))[T.8.0]","C(rel_year, contr.treatment(base=-1.0))[T.9.0]","C(rel_year, contr.treatment(base=-1.0))[T.10.0]","C(rel_year, contr.treatment(base=-1.0))[T.11.0]","C(rel_year, contr.treatment(base=-1.0))[T.12.0]","C(rel_year, contr.treatment(base=-1.0))[T.13.0]","C(rel_year, contr.treatment(base=-1.0))[T.14.0]","C(rel_year, contr.treatment(base=-1.0))[T.15.0]","C(rel_year, contr.treatment(base=-1.0))[T.16.0]","C(rel_year, contr.treatment(base=-1.0))[T.17.0]","C(rel_year, contr.treatment(base=-1.0))[T.18.0]","C(rel_year, contr.treatment(base=-1.0))[T.19.0]","C(rel_year, contr.treatment(base=-1.0))[T.20.0]"],
-"Estimate":[-3.551929536210318E-8,-0.05822583251533651,-0.006032211992613522,-0.006152375190415712,-0.012533269577187376,-0.034697606166936165,0.03782821313278836,2.1315091505167194E-4,-0.0011267317909735854,0.026530166495163123,-0.02684163867727671,0.007378356801149751,0.002339696605279026,0.008999954415031963,0.03275225811843527,2.589201081122684E-4,-0.03932617050693799,0.005630355477915762,0.024642835056253226,0.0011693818689868186,1.3730782812938136,1.6021020425516928,1.6657197436428295,1.7874633310303911,1.914912712719568,2.0592032799014506,2.1474988919626194,2.2340155728160327,2.327566440967995,2.346379081884324,2.501338373713534,2.5534424556739195,2.604402978845574,2.5785087568520995,2.7234333114983915,2.9097391899350957,2.859789620054618,2.9084076338706337,2.874142643269005,2.8832717144918742,2.9119654874923606],
-"2.5%":[-4.697386855663595E-8,-0.12841200984568715,-0.06550048554815804,-0.07493714526067123,-0.06120767317837,-0.09311712161770831,-0.025495406145009225,-0.07125403852365761,-0.05398936829792462,-0.03741495496330306,-0.10584305328200813,-0.03825653023629187,-0.04116803499459886,-0.0364312826954398,-0.015537018325737811,-0.039086754194464196,-0.0853519716771803,-0.033307107126167274,-0.01710963058901853,-0.0480160964046532,1.2955885713790523,1.503099470975332,1.5769578777071644,1.688414708047007,1.839404783632977,1.9763795402814168,2.053168810360179,2.1467005642212804,2.2449840433386323,2.26358206591095,2.417336397911004,2.429880988937957,2.4658013346368377,2.4348096446504854,2.598272866126778,2.7733306601292953,2.7292250078164235,2.793965545081513,2.719372651182861,2.740249353175563,2.7768018634590472],
-"97.5%":[-2.4064722167570402E-8,0.011960344815014144,0.05343606156293101,0.0626323948798398,0.036141134023995256,0.023721909283835982,0.10115183241058595,0.07168034035376095,0.05173590471597745,0.09047528795362932,0.052159775927454716,0.05301324383859138,0.04584742820515691,0.05443119152550373,0.08104153456260835,0.039604594410688726,0.006699630663304312,0.04456781808199879,0.06639530070152498,0.050354860142626835,1.450567991208575,1.7011046141280535,1.7544816095784945,1.8865119540137751,1.990420641806159,2.1420270195214846,2.24182897356506,2.321330581410785,2.4101488385973577,2.429176097857698,2.585340349516064,2.677003922409882,2.74300462305431,2.7222078690537135,2.848593756870005,3.046147719740896,2.9903542322928125,3.0228497226597546,3.0289126353551494,3.0262940758081855,3.047129111525674],
+"Estimate":[-3.5519295362103184E-8,-0.058225832515336515,-0.006032211992613522,-0.006152375190415713,-0.01253326957718738,-0.034697606166936165,0.03782821313278836,2.1315091505167194E-4,-0.0011267317909735856,0.026530166495163127,-0.026841638677276715,0.0073783568011497516,0.002339696605279026,0.008999954415031965,0.032752258118435275,2.589201081122685E-4,-0.039326170506938,0.005630355477915762,0.024642835056253226,0.0011693818689868186,1.3730782812938138,1.602102042551693,1.6657197436428295,1.7874633310303913,1.914912712719568,2.059203279901451,2.1474988919626194,2.234015572816033,2.3275664409679955,2.3463790818843244,2.5013383737135344,2.5534424556739195,2.604402978845574,2.5785087568521,2.7234333114983915,2.9097391899350957,2.8597896200546185,2.9084076338706337,2.874142643269005,2.8832717144918742,2.9119654874923606],
+"2.5%":[-4.697386855663596E-8,-0.12841200984568718,-0.06550048554815804,-0.07493714526067123,-0.06120767317837001,-0.09311712161770831,-0.025495406145009225,-0.07125403852365761,-0.05398936829792462,-0.03741495496330306,-0.10584305328200813,-0.03825653023629187,-0.04116803499459886,-0.0364312826954398,-0.015537018325737804,-0.039086754194464196,-0.08535197167718031,-0.033307107126167274,-0.01710963058901853,-0.0480160964046532,1.2955885713790525,1.5030994709753323,1.5769578777071644,1.6884147080470073,1.839404783632977,1.9763795402814173,2.053168810360179,2.146700564221281,2.2449840433386328,2.2635820659109505,2.4173363979110043,2.429880988937957,2.4658013346368377,2.434809644650486,2.598272866126778,2.7733306601292953,2.7292250078164244,2.793965545081513,2.719372651182861,2.740249353175563,2.7768018634590472],
+"97.5%":[-2.406472216757041E-8,0.011960344815014137,0.05343606156293101,0.0626323948798398,0.03614113402399525,0.023721909283835982,0.10115183241058595,0.07168034035376095,0.05173590471597745,0.09047528795362932,0.05215977592745471,0.05301324383859138,0.04584742820515691,0.05443119152550373,0.08104153456260835,0.03960459441068874,0.006699630663304305,0.04456781808199879,0.06639530070152498,0.050354860142626835,1.4505679912085752,1.7011046141280537,1.7544816095784945,1.8865119540137754,1.990420641806159,2.142027019521485,2.24182897356506,2.3213305814107854,2.410148838597358,2.4291760978576984,2.5853403495160645,2.677003922409882,2.74300462305431,2.722207869053714,2.848593756870005,3.046147719740896,2.9903542322928125,3.0228497226597546,3.0289126353551494,3.0262940758081855,3.047129111525674],
 "Model":["dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)","dep_var_hat~i(rel_year,ref=-1.0)"]
 },
 "mapping":{
@@ -943,30 +986,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 "metainfo_list":[],
 "spec_id":"1"
 };
-               window.letsPlotCall(function() {
-       
-               var toolbar = null;
-               var plotContainer = containerDiv;               
-               
-                   var options = {
-                       sizing: {
-                           width_mode: "min",
-                           height_mode: "scaled",
-                           width: width
-                       }
-                   };
-                   var fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer, options);
-                   if (toolbar) {
-                     toolbar.bind(fig);
-                   }
-               });
-               
-               break;
-           }
+           window.letsPlotCall(function() { fig = LetsPlot.buildPlotFromProcessedSpecs(plotSpec, containerDiv, sizing); });
+       } else {
+           fig.updateView({});
        }
-   });
+   }
    
-   observer.observe(containerDiv);
+   const renderImmediately = 
+       forceImmediateRender || (
+           sizing.width_mode === 'FIXED' && 
+           (sizing.height_mode === 'FIXED' || sizing.height_mode === 'SCALED')
+       );
+   
+   if (renderImmediately) {
+       renderPlot();
+   }
+   
+   if (!renderImmediately || responsive) {
+       // Set up observer for initial sizing or continuous monitoring
+       var observer = new ResizeObserver(function(entries) {
+           for (let entry of entries) {
+               if (entry.contentBoxSize && 
+                   entry.contentBoxSize[0].inlineSize > 0) {
+                   if (!responsive && observer) {
+                       observer.disconnect();
+                       observer = null;
+                   }
+                   renderPlot();
+                   if (!responsive) {
+                       break;
+                   }
+               }
+           }
+       });
+       
+       observer.observe(containerDiv);
+   }
    
    // ----------
    })();
@@ -975,8 +1030,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>To estimate a pooled effect, we need to slightly update the second stage formula:</p>
-<div id="2f19d269" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> pf.did2s(</span>
+<div id="85f1b474" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fit <span class="op">=</span> pf.did2s(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    df_het,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    yname<span class="op">=</span><span class="st">"dep_var"</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    first_stage<span class="op">=</span><span class="st">"~ 0 | unit + year"</span>,</span>
@@ -984,12 +1039,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    treatment<span class="op">=</span><span class="st">"treat"</span>,</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    cluster<span class="op">=</span><span class="st">"state"</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>fit.tidy().head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>fit.tidy().head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1012,7 +1067,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">C(treat)[T.True]</td>
+<th data-quarto-table-cell-role="th">C(treat)[T.True]</th>
 <td>2.230482</td>
 <td>0.024709</td>
 <td>90.271444</td>
@@ -1082,13 +1137,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
